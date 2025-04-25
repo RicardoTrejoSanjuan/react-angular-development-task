@@ -51,8 +51,19 @@ export const taskSlice = createSlice({
     loadTasksFromStorage: (state, action: PayloadAction<Record<string, Task>>) => {
       state.tasks = action.payload;
     },
+    removeTask: (state, action) => {
+      const taskIdToRemove = action.payload;
+      state.tasks = Object.fromEntries(Object.entries(state.tasks).filter(([_, task]) => task.id !== taskIdToRemove));
+    },
   },
 });
 
-export const { addTask, setDraggingTaskId, removingDraggingTaskId, changeTaskStatus, onTaskDrop, loadTasksFromStorage } =
-  taskSlice.actions;
+export const {
+  addTask,
+  setDraggingTaskId,
+  removingDraggingTaskId,
+  changeTaskStatus,
+  onTaskDrop,
+  loadTasksFromStorage,
+  removeTask,
+} = taskSlice.actions;

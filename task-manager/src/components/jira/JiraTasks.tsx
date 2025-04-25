@@ -23,30 +23,30 @@ export const JiraTasks = ({ title, status, tasks, icon }: JiraTasksProps) => {
       onDragLeave={handleOnDragLeave}
       onDrop={handleOnDrop}
       className={classNames(
-        '!text-black relative flex flex-col rounded-[20px]  bg-white bg-clip-border shadow-3xl shadow-shadow-500  w-full !p-4 3xl:p-![18px]',
+        'flex flex-col w-full min-h-[300px] rounded-2xl bg-white dark:bg-gray-900 shadow-md p-5 transition-colors duration-200',
         {
           'border-blue-500 border-dotted border-4': isDragging,
           'border-green-500 border-dotted border-4': isDragging && onDragOver,
         }
       )}>
       {/* Task Header */}
-      <div className='relative flex flex-row justify-between'>
-        <div className='flex items-center justify-center'>
-          <div className='flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100'>
-            <span className='flex justify-center items-center h-6 w-6 text-brand-500'>
-              <CustomIcon Icon={icon} size={50} color={'red'} />
-            </span>
+      <div className='flex items-center justify-between mb-4'>
+        <div className='flex items-center gap-2'>
+          <div className='p-2 bg-indigo-100 dark:bg-indigo-500 rounded-full'>
+            <CustomIcon Icon={icon} size={24} color='indigo' />
           </div>
-
-          <h4 className='ml-4 text-xl font-bold text-navy-700'>{title}</h4>
+          <h2 className='text-lg font-semibold'>{title}</h2>
         </div>
-        <button onClick={handleAddTask}>
-          <IoAddCircleOutline />
+        <button
+          onClick={handleAddTask}
+          className='text-indigo-500 hover:text-indigo-700 transition-transform hover:scale-110'
+          title='Add Task'>
+          {status !== 'done' && <IoAddCircleOutline size={24} />}
         </button>
       </div>
 
       {/* Task Items */}
-      <div className='h-full w-full'>
+      <div className='flex flex-col gap-3'>
         {tasks.map(task => (
           <SingleTask key={task.id} task={task} />
         ))}

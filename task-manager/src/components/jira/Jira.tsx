@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-// icons
 import { MdPendingActions } from 'react-icons/md';
 import { GiProgression } from 'react-icons/gi';
 import { IoMdDoneAll } from 'react-icons/io';

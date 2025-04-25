@@ -9,7 +9,7 @@ export const DashboardPage = () => {
             Welcome to <span className='text-indigo-800 dark:text-indigo-600'>Task Manager</span>
           </h1>
           <p className='text-lg mb-8 text-gray-700 dark:text-gray-400'>
-            A JS library for predictable and maintainable global state management
+            A collaborative task board for organizing, tracking, and managing your tasks in real-time.
           </p>
           <Jira />
         </div>
