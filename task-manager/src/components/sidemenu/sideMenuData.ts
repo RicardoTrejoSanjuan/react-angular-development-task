@@ -22,15 +22,9 @@ export const menuItems: MenuItem[] = [
     Icon: IoListOutline,
   },
   {
-    title: 'Goals',
-    subTitle: 'Goals',
-    href: '/dashboard/goals',
+    title: 'About me',
+    subTitle: 'about-me',
+    href: '/dashboard/about-me',
     Icon: IoAccessibilityOutline,
-  },
-  {
-    title: 'Content',
-    subTitle: 'Content',
-    href: '/dashboard/content',
-    Icon: IoListOutline,
   },
 ];

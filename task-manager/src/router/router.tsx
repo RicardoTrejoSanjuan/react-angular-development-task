@@ -3,6 +3,7 @@ import { Root } from '../Root';
 import { DashboardLayout } from '../layouts';
 import { DashboardPage } from '../pages/dashboard/DashboardPage';
 import { TaskPage } from '../pages/task/TaskPage';
+import { AboutMePage } from '../pages/about_me/AboutMePage';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
           {
             path: 'task',
             element: <TaskPage />,
+          },
+          {
+            path: 'about-me',
+            element: <AboutMePage />,
           },
         ],
       },
